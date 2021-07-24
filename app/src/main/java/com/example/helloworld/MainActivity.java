@@ -12,8 +12,6 @@ import android.hardware.camera2.CaptureRequest;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.TextureView;
 import android.view.View;
 import android.widget.Button;
@@ -29,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private CameraDevice myCameraDevice;
     private TextureView myTextureView;
     private CaptureRequest.Builder myCaptureBuilder;
-    private Button cameraButton;
+    private Button cameraButtonHaim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         myCameraManager = (CameraManager) getSystemService(CAMERA_SERVICE);
         editText = findViewById(R.id.firstEditTxt);
         textView = findViewById(R.id.EinavTxt);
-        cameraButton = findViewById(R.id.button);
+        cameraButtonHaim = findViewById(R.id.button);
 
         editText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -58,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        cameraButton.setOnClickListener(new View.OnClickListener() {
+        cameraButtonHaim.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 openCamera();
             }
